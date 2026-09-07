@@ -123,8 +123,6 @@ docker run turbine-monitor
 
 ![Cloud](cloud.jpeg)
 
-```
-
 ### Benefits
 
 - Real-time anomaly detection
