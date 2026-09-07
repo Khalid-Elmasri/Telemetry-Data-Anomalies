@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 #read data
-parse=pd.read_csv("C:/Users/PC/Downloads/telemetry_data(in).csv")
+parse=pd.read_csv("telemetry_data(in).csv")
 
 #Find anomoly
 anomaly=parse[
