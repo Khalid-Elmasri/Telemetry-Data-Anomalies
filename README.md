@@ -70,24 +70,19 @@ The script:
 
 ### Example Code
 
-```python
+import numpy as np
 import pandas as pd
 
-data = pd.read_csv("telemetry_data.csv")
+#read data
+parse=pd.read_csv("C:/Users/PC/Downloads/telemetry_data(in).csv")
 
-summary = data.groupby("turbine_id").agg({
-    "temperature": "mean",
-    "vibration": "max"
-}).reset_index()
+#Find anomoly
+anomaly=parse[
+    (parse["temperature_c"]>85) |
+    (parse["vibration_mm_s"]>15)]
 
-failing = summary[
-    (summary["temperature"] > 85.0) |
-    (summary["vibration"] > 15.0)
-]
-
-print("Failing Turbines:")
-print(failing["turbine_id"].tolist())
-```
+print("Turbines with anomalies:")
+print(anomaly["turbine_id"].unique())
 
 ---
 
