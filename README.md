@@ -69,6 +69,7 @@ The script:
 6. Outputs a list of turbines requiring maintenance
 
 ### Example Code
+```python 
 
 import numpy as np
 import pandas as pd
@@ -83,7 +84,7 @@ anomaly=parse[
 
 print("Turbines with anomalies:")
 print(anomaly["turbine_id"].unique())
-
+```
 ---
 
 ## Running the Project
@@ -120,24 +121,8 @@ docker run turbine-monitor
 
 ## Proposed Cloud Architecture
 
-```text
-IoT Turbine Sensors
-        │
-        ▼
-Message Queue
-(Kafka / Kinesis)
-        │
-        ▼
-Stream Processing
-(AWS Lambda)
-        │
- ┌──────┴──────┐
- ▼             ▼
-Hot Storage   Cold Storage
-(Time Series) (Data Lake)
-        │
-        ▼
-Dashboard & Alerts
+![Cloud](cloud.jpeg)
+
 ```
 
 ### Benefits
